@@ -133,10 +133,9 @@ angular
     }
 
     service.loadProject = function() {
-        var cache_bust = "?cb=" + (new Date()).getTime();
         var promises = [
-            loadFile('manifest', "manifest.json" + cache_bust),
-            loadFile('catalog', "catalog.json" + cache_bust),
+            loadFile('manifest', "manifest.json"),
+            loadFile('catalog', "catalog.json"),
         ]
 
         $q.all(promises).then(function(files) {
